@@ -4,11 +4,12 @@ window.addEventListener('DOMContentLoaded', function () {
     formulario.addEventListener('submit', function (event) {
         // Validaciones previas antes de preventDefault
         event.preventDefault();
+        var edadValor = document.getElementById('edad').value.trim();
         var usuario = {
             nombre: document.getElementById('nombre').value.trim(),
             apellidoPaterno: document.getElementById('apellidoPaterno').value.trim(),
-            edad: parseInt(document.getElementById('edad').value, 10),
-            genero: document.getElementById('genero').value
+            edad: edadValor ? parseInt(edadValor, 10) : NaN,
+            genero: document.getElementById('genero').value.trim()
         };
         if (!usuario.nombre || !usuario.apellidoPaterno || isNaN(usuario.edad) || !usuario.genero) {
             resultado.textContent = 'Por favor, complete todos los campos correctamente.';

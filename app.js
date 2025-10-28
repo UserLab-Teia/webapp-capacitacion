@@ -9,14 +9,15 @@ window.addEventListener('DOMContentLoaded', function () {
             nombre: document.getElementById('nombre').value.trim(),
             apellidoPaterno: document.getElementById('apellidoPaterno').value.trim(),
             edad: edadValor ? parseInt(edadValor, 10) : NaN,
-            genero: document.getElementById('genero').value.trim()
+            genero: document.getElementById('genero').value.trim(),
+            pais: document.getElementById('pais').value.trim()
         };
-        if (!usuario.nombre || !usuario.apellidoPaterno || isNaN(usuario.edad) || !usuario.genero) {
+        if (!usuario.nombre || !usuario.apellidoPaterno || isNaN(usuario.edad) || !usuario.genero || !usuario.pais) {
             resultado.textContent = 'Por favor, complete todos los campos correctamente.';
             resultado.style.color = 'red';
             return;
         }
-        resultado.textContent = "Registro exitoso: ".concat(usuario.nombre, " ").concat(usuario.apellidoPaterno, ", Edad: ").concat(usuario.edad, ", Género: ").concat(usuario.genero);
+        resultado.textContent = "Registro exitoso: ".concat(usuario.nombre, " ").concat(usuario.apellidoPaterno, ", Edad: ").concat(usuario.edad, ", Género: ").concat(usuario.genero, ", País: ").concat(usuario.pais);
         resultado.style.color = '#0078d4';
     });
 });
